@@ -1,0 +1,121 @@
+Checks:
+'
+*,
+-abseil*,
+-altera-*,
+-android-*,
+-boost-*,
+-cppcoreguidelines-*,
+-darwin-*,
+-fuchsia-*,
+-hicpp-*,
+-llvmlibc-*,
+-linuxkernel-*,
+-mpi-*,
+-objc-*,
+-openmp-*,
+-zircon-*,
+-bugprone-narrowing-conversions,
+-bugprone-easily-swappable-parameters,
+-bugprone-branch-clone,
+-bugprone-implicit-widening-of-multiplication-result,
+-bugprone-suspicious-include,
+-bugprone-integer-division,
+-bugprone-suspicious-enum-usage,
+-bugprone-exception-escape,
+-bugprone-unchecked-optional-access,
+-bugprone-misplaced-widening-cast,
+-cert-err58-cpp,
+-cert-dcl16-c,
+-cert-dcl21-cpp,
+-cert-dcl50-cpp,
+-cert-err60-cpp,
+-clang-analyzer-alpha*,
+-clang-analyzer-alpha.core.CastToStruct,
+-clang-analyzer-alpha.deadcode.UnreachableCode,
+-clang-analyzer-apiModeling-*
+-clang-analyzer-core.CallAndMessage,
+-clang-analyzer-core.NonNullParamChecker,
+-clang-analyzer-cplusplus.NewDeleteLeaks,
+-clang-analyzer-security.insecureAPI.*,
+-clang-analyzer-osx.*
+-clang-analyzer-webkit.*
+-concurrency-*,
+-google-*,
+-llvm-include-order,
+-llvm-namespace-comment,
+-llvm-qualified-auto,
+-llvm-else-after-return,
+-llvm-header-guard,
+-misc-no-recursion,
+-misc-non-private-member-variables-in-classes,
+-misc-const-correctness,
+-misc-include-cleaner,
+-modernize-use-override,
+-modernize-use-bool-literals,
+-modernize-pass-by-value,
+-modernize-raw-string-literal,
+-modernize-use-using,
+-modernize-loop-convert,
+-modernize-return-braced-init-list,
+-modernize-use-emplace,
+-modernize-use-equals-default,
+-modernize-use-trailing-return-type,
+-modernize-use-nodiscard,
+-modernize-avoid-bind,
+-modernize-avoid-c-arrays,
+-performance-unnecessary-copy-initialization,
+-performance-unnecessary-value-param,
+-performance-no-automatic-move,
+-performance-no-int-to-ptr,
+-performance-avoid-endl,
+-readability-else-after-return,
+-readability-named-parameter,
+-readability-implicit-bool-conversion,
+-readability-namespace-comments,
+-readability-qualified-auto,
+-readability-magic-numbers,
+-readability-braces-around-statements,
+-readability-function-cognitive-complexity,
+-readability-const-return-type,
+-readability-convert-member-functions-to-static,
+-readability-inconsistent-declaration-parameter-name,
+-readability-simplify-boolean-expr,
+-readability-redundant-access-specifiers,
+-readability-identifier-length,
+-readability-misleading-indentation,
+-readability-make-member-function-const,
+-readability-suspicious-call-argument,
+-readability-uppercase-literal-suffix,
+'
+
+WarningsAsErrors: ''
+HeaderFilterRegex: ''
+AnalyzeTemporaryDtors: false
+
+CheckOptions:
+  - key:             cert-oop11-cpp.UseCERTSemantics
+    value:           '1'
+  - key:             modernize-loop-convert.MaxCopySize
+    value:           '16'
+  - key:             modernize-loop-convert.MinConfidence
+    value:           reasonable
+  - key:             modernize-loop-convert.NamingStyle
+    value:           CamelCase
+  - key:             modernize-pass-by-value.IncludeStyle
+    value:           llvm
+  - key:             modernize-replace-auto-ptr.IncludeStyle
+    value:           llvm
+  - key:             modernize-use-nullptr.NullMacros
+    value:           'NULL'
+  - key:             readability-braces-around-statements.ShortStatementLines
+    value:           '3'
+  - key:             misc-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic
+    value:           '1'
+  - key:             cppcoreguidelines-special-member-functions.AllowSoleDefaultDtor
+    value:           1
+  - key:             cppcoreguidelines-special-member-functions.AllowMissingMoveFunctionsWhenCopyIsDeleted
+    value:           1
+  - key:             performance-move-const-arg.CheckTriviallyCopyableMove
+    value:           0
+...
